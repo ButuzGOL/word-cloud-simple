@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Word Cloud</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+  <script type="text/x-handlebars">
+    <div class="container">
+      <header>
+        <h1>{{#linkTo 'topics' }}My Topics Challenge{{/linkTo}}</h1>
+      </header>
+      <section id="main">
+        <div class="center">
+          {{ outlet }}
+        </div>
+      </section>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="topics">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="cloud">
+          {{#each model}}
+            {{#linkTo 'topic' this}}{{label}}{{/linkTo}}
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-md-4">
+        {{ outlet }}
+      </div>
+  </script>
+
+  <script type="text/x-handlebars" id="topic">
+    <h4>Information on topic "{{ label }}":</h4>
+  </script>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/ember.js/1.6.1/ember.min.js"></script>
+  <script src="js/fixtures.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
