@@ -36,6 +36,24 @@
 
   <script type="text/x-handlebars" id="topic">
     <h4>Information on topic "{{ label }}":</h4>
+
+    <dl class="dl-horizontal">
+      <dt>Total Mentions:</dt>
+      <dd>{{ volume }}</dd>
+      <br />
+      <dt>Positive Mentions:</dt>
+      <dd class="green">
+        {{undefined-to-zero sentiment.positive}}
+       </dd>
+      <dt>Neutral Mentions:</dt>
+      <dd class="grey">
+        {{undefined-to-zero sentiment.neutral}}
+      </dd>
+      <dt>Negative Mentions:</dt>
+      <dd class="red">
+        {{undefined-to-zero sentiment.negative}}
+      </dd>
+    </dl>
   </script>
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

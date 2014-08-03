@@ -25,3 +25,7 @@ App.TopicRoute = Ember.Route.extend({
     return Topics.findBy('id', params.topic_id);
   }
 });
+
+Ember.Handlebars.helper('undefined-to-zero', function(value) {
+  return (typeof value === 'undefined') ? 0 : value;
+});
