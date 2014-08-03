@@ -24,8 +24,10 @@
     <div class="row">
       <div class="col-md-8">
         <div class="cloud">
-          {{#each model}}
-            {{#linkTo 'topic' this}}{{label}}{{/linkTo}}
+          {{#each model itemController='topic'}}
+            <span {{bind-attr class="mood" style="popularity"}}>
+              {{#linkTo 'topic' this}}{{label}}{{/linkTo}}
+            </span>
           {{/each}}
         </div>
       </div>

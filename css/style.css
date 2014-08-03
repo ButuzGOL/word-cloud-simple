@@ -1,3 +1,19 @@
 .ember-application {
-    margin: 20px;
+  margin: 20px;
+}
+
+.green {
+  color: green
+}
+
+.red {
+  color: red
+}
+
+.grey {
+  color: grey
+}
+
+.cloud a, .cloud a:hover, .cloud a:active {
+  color: inherit;
 }
